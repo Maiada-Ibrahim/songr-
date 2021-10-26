@@ -8,7 +8,19 @@
 </head>
 <body>
 <h1> this is albums page</h1>
-
+<form action="/addalbums" method="post">
+    <label>Title</label>
+    <input type="text" name="title" id="title">
+    <label>Artist:</label>
+    <input type="text" name="artist" id="artist">
+    <label>SongCount:</label>
+    <input type="number" name="songCount" id="songCount">
+    <label>Length:</label>
+    <input type="number" name="length" id="length">
+    <label>ImageUrl:</label>
+    <input type="text" name="imageUrl" id="imageUrl">
+    <input type="submit" value="Added">
+</form>
 
     <div th:each="albumsList:${albumsList}" >
         <img th:src= ${albumsList.imageUrl} >
