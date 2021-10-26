@@ -22,8 +22,8 @@ in this part we created a database and that access that we access it and store d
 - Add new feature to add album (/addAlbum) route on which you will a form then submit it which will  invoke the post request that will create modle and save it in the database.
 
 
-### Step Soultion :
+### Step  of Soultion :
 1. fill the form at infromation after add (submit) it will send requst at route (/addAlbum)
 2. add the album to the data base 
-3. Redirect at another route to get data again useig CrudRepository and show it at albums.html
+3. Redirect at another route to get data  useig CrudRepository and show it at albums.html
 
