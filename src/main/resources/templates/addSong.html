@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1> Please Fill the form below: </h1>
+<form action="/addSong" method="post">
+    <label for="title"> Title:</label>
+    <input type="text" name="title" id="title"/><br>
+
+    <label for="length" > Length:</label>
+    <input type="text" name="length" id="length"/><br>
+
+    <label for="trackNumber"> Track Number:</label>
+    <input type="text" name="trackNumber" id="trackNumber"/><br>
+
+    <label id="id"> ٍSelect Album:</label>
+    <select name="id" >
+        <option th:each="albums:${albums}"
+                th:value="${albums.id}"
+                th:text="${albums.title}"
+        >
+        </option>
+
+    </select><br>
+
+    <input type="submit" value="submit"/>
+
+</form>
+</body>
+</html>

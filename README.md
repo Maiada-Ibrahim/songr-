@@ -27,3 +27,9 @@ in this part we created a database and that access that we access it and store d
 2. add the album to the data base 
 3. Redirect at another route to get data  useig CrudRepository and show it at albums.html
 
+
+# Lab: 13 - Related Resources and Integration Testing
+create songs for each album  http://localhost:8080/albums/1  you can see in this rout
+add a songs for albums  http://localhost:8080/addSong
+see all songs in this app  http://localhost:8080/songs
+

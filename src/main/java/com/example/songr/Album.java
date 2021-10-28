@@ -1,6 +1,7 @@
 package com.example.songr;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="album")
@@ -13,7 +14,8 @@ public class Album {
     private int songCount ;
     private  int length;
     private  String imageUrl;
-
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
+    private List<Song> songs;
 
 public Album(){}
 
@@ -73,6 +75,10 @@ public Album(){}
         this.imageUrl = imageUrl;
     }
 
+    public List<Song> getSongs() {
+        return songs;
+    }
+
     @Override
     public String toString() {
         return "Album{" +
@@ -83,4 +89,8 @@ public Album(){}
                 ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
+    public void addSongToAlbum(Song song) {
+        songs.add(song);
+    }
+
 }
