@@ -47,19 +47,22 @@ public String showSongs(@PathVariable int id , Model model){
     model.addAttribute("songs" , songs);
     return "songs";
 }
-@PostMapping("/songs/{albumId}")
-public RedirectView addSong(@RequestParam String title , @RequestParam int length
-        ,@RequestParam int trackNumber , @PathVariable int albumId){
-    Song song = new Song(title , length , trackNumber );
-    System.out.println("ALbum id " + albumId);
-    Album album = albumsRepository.findById(albumId).orElseThrow();
-    song.setAlbum(album);
-    songRepository.save(song);
-    return new RedirectView("/albums/{albumId}");
-}
 
-
-
-
+//    @GetMapping("/albumsong")
+//    public String getAlbumSongs(Model model){
+//        List<Song> data = data.getSongs().findAll();
+//        model.addAttribute("songs", data);
+//        return "albumsongs";
+//    }
+//@PostMapping("/songs/{albumId}")
+//public RedirectView addSong(@RequestParam String title , @RequestParam int length
+//        ,@RequestParam int trackNumber , @PathVariable int albumId){
+//    Song song = new Song(title , length , trackNumber );
+//    System.out.println("ALbum id " + albumId);
+//    Album album = albumsRepository.findById(albumId).orElseThrow();
+//    song.setAlbum(album);
+//    songRepository.save(song);
+//    return new RedirectView("/albums/{albumId}");
+//}
 
 }

@@ -31,21 +31,24 @@
 
 </div>
 
+<!--<form th:action="${'/albums/'+id }" method="Get">-->
 
-<form action="/songs/{albumId}" method="post">
-
-    <label id="id"> ٍSelect Album to see all song in it:</label>
-    <select name="id" >
-        <option th:each="albums:${albums}"
-                th:value="${albums.id}"
-                th:text="${albums.title}"
-        >
-        </option>
-
-    </select><br>
-
-    <input type="submit" value="submit"/>
-
-</form>
+<!--    <a th:href="${'/albums/ '+id}"> album songs </a>-->
+<label id="id"> ٍSelect Album to see all song in it:</label>
+<!--    <select name="myselect"  id="myselect" >-->
+<!--        <option th:each="albums:${albums}"-->
+<!--                th:value="${albums.id}"-->
+<!--                th:text="${albums.title}"-->
+<!--        >-->
+<!--        </option>-->
+<!--    </select><br>-->
+<!--    <input type="submit" value="submit"/>-->
+<!--</form>-->
+    <div th:each="albums:${albums}" >
+<!--        <p th:text= "${albums.title}"> </p>-->
+<!--        <p th:value= "${albums.id}"> </p>-->
+<!--        <a th:href="${'/albums/'+albums.id}">  </a>-->
+        <p> album:<span th:text= ${albums.title}> </span><a th:href="${'/albums/'+albums.id}"> check her </a> </p>
+    </div>
 </body>
 </html>
