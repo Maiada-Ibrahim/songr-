@@ -18,7 +18,8 @@ public class HomeController {
     @Autowired
     AlbumRespository albumsRepository;
 
-
+    @Autowired
+    SongRepository songRepository;
     @RequestMapping("/hello")
     @ResponseBody
     public String showHello(){
@@ -49,12 +50,12 @@ public class HomeController {
               albumsList.add(album1);
               albumsList.add(album2);
               albumsList.add(album3);
-             m.addAttribute("albumsList",albumsList);
+             m.addAttribute("albums",albumsList);
              return ("albums.html");
           }
     @GetMapping("/album")
     public String getAlbums1(Model m ){
-        m.addAttribute("albumsList",albumsRepository.findAll());
+        m.addAttribute("albums",albumsRepository.findAll());
         return ("albums.html");
     }
 
@@ -70,6 +71,23 @@ public class HomeController {
 
 
     }
+//    @GetMapping("/album/{id}")
+//    public String getAlbum(@PathVariable("id") int id, Model m){
+//        Album album= albumsRepository.findById(id).get();
+//
+//        m.addAttribute("albums",album);
+//        return "songs.html";
+//
+//    }
+
+//@GetMapping("/album/{id}")
+//public RedirectView getSongAlbum(@PathVariable("id") int id, Model m){
+//    Album album = albumsRepository.findById(id).orElseThrow();
+//    List<Song> songs = album.getSongs();
+//    m.addAttribute("songs",songs);
+//    return new RedirectView("/songs");
+//}
+
 
 
 }
